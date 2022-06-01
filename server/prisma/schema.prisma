@@ -17,3 +17,12 @@ model User {
   updatedAt DateTime @updatedAt
   username  String   @unique
 }
+
+model Order {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  location  String?
+  name      String
+  updatedAt DateTime @updatedAt
+  userId    String?
+}
